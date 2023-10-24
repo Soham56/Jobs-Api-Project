@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&family=Ubuntu:wght@700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100dvh;
+    position: relative;
+    background: linear-gradient(135deg,#737DFE, #FFCAC9);
+}
+
+
+h1{
+    font-size: 8em;
+    text-align: center;
+    margin: 1rem;
+}
+
+h2{
+    font-family: 'Poppins', sans-serif;
+    color: transparent;
+    -webkit-text-stroke: .01px black;
+    font-size: 2rem;
+}
+
+
+.main-style{
+    font-family: 'Ubuntu', sans-serif;
+    background: linear-gradient(135deg,#ED7884,#9055FF,#DF98FA);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0px;
+    background-size: 200% 200%;
+    animation: animate 8s infinite ease-in-out;
+}
+
+@keyframes animate{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+span.main-style.special-keyword{
+    position: relative;
+}
+
+span.main-style.special-keyword::before{
+    content: '';
+    width: 0%;
+    height: 3.5px;
+    position: absolute;
+    bottom: 0px;
+    background-color: black;
+    transition: all 1s ease-in-out;
+}
+
+span.main-style.special-keyword:hover::before{
+    width: 100%;
+}
+
+
+a{
+    display: block;
+    text-align: center;
+    background: #58cc02;
+    box-shadow: 0 5px 0 #58a700;
+    padding: 1rem;
+    padding-inline: 1.5rem;
+    width: max-content;
+    margin-inline: auto;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    transition: all 1s;
+}
+
+a:hover{
+    letter-spacing: 1.5px;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+a:active{
+    box-shadow: none;
+    transform: translateY(5px);
+}
+
+.circle{
+    position: absolute;
+    z-index: -2;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.circle:nth-of-type(1){
+    width: 14rem;
+    height: 14rem;
+    top: 4rem;
+    left: 5rem;
+    background: linear-gradient(45deg,#a8c1ff9a,#3f2b969a);
+    box-shadow: 5px 5px 20px #3939397d;
+    animation: moveCircleTop 4s linear infinite;
+}
+@keyframes moveCircleTop {
+    0%{
+        transform: translate(0px,0px);
+    }
+    25%{
+        transform: translate(30px,0px);
+    }
+    50%{
+        transform: translate(30px,-30px);
+    }
+    75%{
+        transform: translate(0px,-30px);
+    }
+    100%{
+        transform: translate(0px,0px);
+    }
+}
+
+.circle:nth-of-type(2){
+    width: 10rem;
+    height: 10rem;
+    bottom: 7rem;
+    right: 15rem;
+    background: linear-gradient(45deg,#a8c1ff9a,#3f2b969a);
+    box-shadow: 5px 5px 20px #3939397d;
+    animation: moveCircleBottom 10s linear infinite;
+}
+@keyframes moveCircleBottom {
+    0%{
+        transform: translate(0px,0px);
+        
+    }
+    16%{
+        transform: translate(0px,-40px);
+    }
+    32%{
+        transform: translate(0px,-20px);
+    }
+    48%{
+        transform: translate(-20px,-20px);
+    }
+    64%{
+        transform: translate(40px,-20px);
+    }
+    80%{
+        transform: translate(0px,-20px);
+    }
+    100%{
+        transform: translate(0px,0px);
+    }
+}
+
+
+#my-canvas{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100dvh;
+    z-index: -1;
+}
