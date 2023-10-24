@@ -32,6 +32,7 @@ const limiter = rateLimit({
 });
 
 // Apply the rate limiting middleware to all requests
+app.set('trust proxy',1);
 app.use(limiter);
 
 //Middleware to accept json request
