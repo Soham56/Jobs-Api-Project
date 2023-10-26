@@ -1,11 +1,16 @@
 require('dotenv').config();
 require('express-async-errors');
 
-//Sequrity Packages
+//Security Packages
 const helmet = require('helmet');
 const cors = require('cors');
 const xss = require('xss-clean');
 const {rateLimit} = require('express-rate-limit');
+
+// Implementing Swagger Ui 
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const swaggerDocument = YAML.load('./swagger.yaml');
 
 const express = require('express');
 const app = express();
@@ -31,7 +36,7 @@ const limiter = rateLimit({
 	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
 });
 
-// Apply the rate limiting middleware to all requests
+// Appling the rate limiting middleware to all requests
 app.set('trust proxy',1);
 app.use(limiter);
 
@@ -44,7 +49,8 @@ app.use(cors());
 app.use(xss());
 
 //Home Route
-app.use(express.static('public'))
+app.use(express.static('public'));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 //Integrate routes
 app.use('/api/v1/auth', authRoutes);
