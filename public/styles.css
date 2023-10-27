@@ -16,6 +16,27 @@ body{
     background: linear-gradient(135deg,#737DFE, #FFCAC9);
 }
 
+.preloder{
+    position: absolute;
+    inset: 0;
+    background: black url(./Spinner-1s-203px.gif) no-repeat center center;
+    background-size: 20%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.preloder h1{
+    font-size: 19vw;
+    color: #ffffff11;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.preloder.hide{
+    display: none;
+}
+
 
 h1{
     font-size: 8em;
@@ -25,6 +46,7 @@ h1{
 
 h2{
     font-family: 'Poppins', sans-serif;
+    color: black;
     color: transparent;
     -webkit-text-stroke: .01px black;
     font-size: 2rem;
@@ -37,7 +59,6 @@ h2{
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 0px;
     background-size: 200% 200%;
     animation: animate 8s infinite ease-in-out;
 }
@@ -64,7 +85,7 @@ span.main-style.special-keyword::before{
     height: 3.5px;
     position: absolute;
     bottom: 0px;
-    background-color: black;
+    background: linear-gradient(135deg,#ED7884,#9055FF,#DF98FA);
     transition: all 1s ease-in-out;
 }
 
@@ -111,6 +132,8 @@ a:active{
     border-radius: 50%;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    background: linear-gradient(45deg,#a8c1ff9a,#3f2b969a);
+    box-shadow: 5px 5px 20px #3939397d;
 }
 
 .circle:nth-of-type(1){
@@ -118,8 +141,6 @@ a:active{
     height: 14rem;
     top: 4rem;
     left: 5rem;
-    background: linear-gradient(45deg,#a8c1ff9a,#3f2b969a);
-    box-shadow: 5px 5px 20px #3939397d;
     animation: moveCircleTop 4s linear infinite;
 }
 @keyframes moveCircleTop {
@@ -145,8 +166,6 @@ a:active{
     height: 10rem;
     bottom: 7rem;
     right: 15rem;
-    background: linear-gradient(45deg,#a8c1ff9a,#3f2b969a);
-    box-shadow: 5px 5px 20px #3939397d;
     animation: moveCircleBottom 10s linear infinite;
 }
 @keyframes moveCircleBottom {
@@ -182,4 +201,49 @@ a:active{
     width: 100%;
     height: 100dvh;
     z-index: -1;
+}
+
+@media screen and (max-width: 1024px) {
+    h1{
+        font-size: 6em;
+    }
+    h2{
+        font-size: 1.7rem;
+    }
+    a{
+        font-size: .85rem;
+    }
+    .circle:nth-of-type(1){
+        width: 11rem;    
+        height: 11rem;    
+        top: 2rem;    
+        left: 2rem;
+    }
+    .circle:nth-of-type(2){
+        width: 9rem;    
+        height: 9rem;    
+        bottom: 3rem;    
+        right: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    h1{
+        font-size: 4.5rem;
+    }
+    h2{
+        font-size: 1.6rem;
+    }
+    .circle:nth-of-type(1){
+        width: 9rem;
+        height: 9rem;    
+        top: 1.5rem;    
+        left: 0.2rem;
+    }
+    .circle:nth-of-type(2){
+        width: 8rem;    
+        height: 8rem;    
+        bottom: 1rem;    
+        right: 1rem;
+    }
 }
