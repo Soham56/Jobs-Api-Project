@@ -50,16 +50,16 @@ Now you should be able to access the API at the specified port and begin testing
 
 ### Authetication Routes
 
-- `POST /register`: Registers a new user. Requires a unique email address.
-- `POST /login`: Allows registered users to log in. Returns an authentication token.
+- `POST api/v1/auth/register`: Registers a new user. Requires a unique email address.
+- `POST api/v1/auth/login`: Allows registered users to log in. Returns an authentication token.
 
 ### Job Routes
 
-- `POST /jobs`: Creates a new job listing.
-- `GET /jobs`: Retrieves all job listings.
-- `GET /jobs/:jobId`: Retrieves a single job listing by its ID.
-- `PUT /jobs/:jobId`: Updates a specific job listing by its ID.
-- `DELETE /jobs/:jobId`: Deletes a job listing by its ID.
+- `POST api/v1/jobs`: Creates a new job listing.
+- `GET api/v1/jobs`: Retrieves all job listings.
+- `GET api/v1/jobs/:jobId`: Retrieves a single job listing by its ID.
+- `PUT api/v1/jobs/:jobId`: Updates a specific job listing by its ID.
+- `DELETE api/v1/jobs/:jobId`: Deletes a job listing by its ID.
 
 ### Home Route
 
