@@ -25,7 +25,7 @@ This project is a RESTful API built with Node.js and Express.js that allows user
 1. Clone the repository:
 
     ```bash
-    git clone <repository>
+    git clone https://github.com/Soham56/Jobs-Api-Project.git
     ```
 
 2. Run npm install to install the required dependencies:
